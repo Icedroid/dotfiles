@@ -7,18 +7,20 @@ if [[ "$TMUX" == "" && $- == *i* ]]; then
     fi
 fi
 
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 # p10k instant prompt
-# 可取代 zplugin turbo mode
-if [[ -r "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# 可取代 zinit turbo mode
+# if [[ -r "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#     source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # ==== Zplugin 初始化 ====
 
 typeset -A ZINIT=(
-    BIN_DIR         $XDG_DATA_HOME/zsh/zinit/bin
-    HOME_DIR        $XDG_DATA_HOME/zsh/zinit
-    COMPINIT_OPTS   -C
+    BIN_DIR $XDG_DATA_HOME/zsh/zinit/bin
+    HOME_DIR $XDG_DATA_HOME/zsh/zinit
+    COMPINIT_OPTS -C
 )
 
 source $XDG_DATA_HOME/zsh/zinit/bin/zinit.zsh
@@ -48,24 +50,28 @@ export _ZL_DATA=$XDG_DATA_HOME/zsh/zlua
 
 # ==== 加载插件 ====
 
-zplugin light-mode for \
+zinit light-mode for \
     zdharma/zzcomplete zdharma/zui \
     hlissner/zsh-autopair \
     skywind3000/z.lua \
     hchbaw/zce.zsh \
     wfxr/forgit
 
-zplugin light-mode for \
+zinit light-mode for \
     blockf \
-        zsh-users/zsh-completions \
+    zsh-users/zsh-completions \
     as="program" atclone="rm -f ^(rgg|agv)" \
-        lilydjwg/search-and-view \
+    lilydjwg/search-and-view \
     atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh' \
-        trapd00r/LS_COLORS
+    trapd00r/LS_COLORS
 
-# zplugin light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab
 
-zplugin for \
+# zinit ice multisrc'*.zsh' pick'/dev/null'
+# zinit snippet OMZ::lib
+zinit ice svn
+zinit snippet OMZ::plugins/extract
+zinit for \
     OMZ::lib/clipboard.zsh \
     OMZ::lib/git.zsh \
     OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
@@ -74,11 +80,11 @@ zplugin for \
     OMZ::plugins/sudo/sudo.plugin.zsh \
     OMZ::plugins/git/git.plugin.zsh
 
-zplugin svn for \
+zinit svn for \
     OMZ::plugins/extract \
     OMZ::plugins/pip
 
-zplugin as="completion" for \
+zinit as="completion" for \
     OMZ::plugins/cargo/_cargo \
     OMZ::plugins/rust/_rust \
     OMZ::plugins/fd/_fd
@@ -89,37 +95,38 @@ for i in $XDG_CONFIG_HOME/zsh/snippets/*.zsh; do
     source $i
 done
 
-source ~/Coding/shell/fzf-tab/fzf-tab.zsh
-source ~/Coding/shell/zvm/zvm.zsh
+# source ~/Coding/shell/fzf-tab/fzf-tab.zsh
+# source ~/Coding/shell/zvm/zvm.zsh
 
-zplugin ice as="completion"
-zplugin snippet $XDG_CONFIG_HOME/zsh/snippets/_bat
+# zinit ice as="completion"
+# zinit snippet $XDG_CONFIG_HOME/zsh/snippets/_bat
 
-zplugin snippet ~/.travis/travis.sh
+# zinit snippet ~/.travis/travis.sh
 
 # ==== 初始化补全 ====
 
-zplugin light-mode for \
+zinit light-mode for \
     zdharma/fast-syntax-highlighting \
     zsh-users/zsh-autosuggestions
 
-zpcompinit; zpcdreplay
+zpcompinit
+zpcdreplay
 
 # ==== 加载主题 ====
 
 : ${THEME:=p10k}
 
 case $THEME in
-    pure)
-        PROMPT=$'\n%F{cyan}❯ %f'
-        RPROMPT=""
-        zstyle ':prompt:pure:prompt:success' color cyan
-        zplugin ice lucid wait="!0" pick="async.zsh" src="pure.zsh" atload="prompt_pure_precmd"
-        zplugin light Aloxaf/pure
-        ;;
-    p10k)
-        source $XDG_CONFIG_HOME/zsh/p10k.zsh
-        zplugin ice depth=1
-        zplugin light romkatv/powerlevel10k
-        ;;
+pure)
+    PROMPT=$'\n%F{cyan}❯ %f'
+    RPROMPT=""
+    zstyle ':prompt:pure:prompt:success' color cyan
+    zinit ice lucid wait="!0" pick="async.zsh" src="pure.zsh" atload="prompt_pure_precmd"
+    zinit light Aloxaf/pure
+    ;;
+p10k)
+    source $XDG_CONFIG_HOME/zsh/p10k.zsh
+    zinit ice depth=1
+    zinit light romkatv/powerlevel10k
+    ;;
 esac
