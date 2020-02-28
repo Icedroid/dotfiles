@@ -32,6 +32,8 @@ fpath+=("$XDG_CONFIG_HOME/zsh/functions")
 autoload -Uz rgzh rgsrc rgdata pslist ebindkey expand_alias palette printc
 autoload +X zman
 autoload -Uz zcalc zmv
+autoload -Uz compinit
+compinit
 
 # ==== 某些插件需要的环境变量 ====
 
