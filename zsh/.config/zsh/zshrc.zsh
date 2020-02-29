@@ -69,10 +69,9 @@ zinit light-mode for \
 
 zinit light Aloxaf/fzf-tab
 
-# zinit ice multisrc'*.zsh' pick'/dev/null'
-# zinit snippet OMZ::lib
 zinit ice svn
 zinit snippet OMZ::plugins/extract
+
 zinit for \
     OMZ::lib/clipboard.zsh \
     OMZ::lib/git.zsh \
