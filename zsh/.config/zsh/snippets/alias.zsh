@@ -73,11 +73,7 @@ alias docker-clean=' \
 
 source <(kubectl completion zsh)
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
-function kubectl() {
-    echo "+ kubectl $@" >&2
-    command kubectl $@
-}
 
 fzfp() {
-fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
+    fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
 }

@@ -1,11 +1,11 @@
 # 作为嵌入式终端时禁用 tmux
 # https://www.reddit.com/r/tmux/comments/a2e5mn/tmux_on_dolphin_inbuilt_terminal/
 # 上面的方法由于 alacritty 0.4.0 的释出而失效
-if [[ "$TMUX" == "" && $- == *i* ]]; then
-    if [[ ! "$(</proc/$PPID/cmdline)" =~ "/usr/bin/(dolphin|emacs|kate)" ]]; then
-        exec tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
-    fi
-fi
+# if [[ "$TMUX" == "" && $- == *i* ]]; then
+#     if [[ ! "$(</proc/$PPID/cmdline)" =~ "/usr/bin/(dolphin|emacs|kate)" ]]; then
+#         exec tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
+#     fi
+# fi
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
@@ -69,6 +69,8 @@ zinit light-mode for \
 
 zinit light Aloxaf/fzf-tab
 
+zinit light jonmosco/kube-ps1
+
 zinit ice svn
 zinit snippet OMZ::plugins/extract
 
@@ -129,5 +131,6 @@ p10k)
     source $XDG_CONFIG_HOME/zsh/p10k.zsh
     zinit ice depth=1
     zinit light romkatv/powerlevel10k
+    PROMPT='$(kube_ps1)'$PROMPT
     ;;
 esac
