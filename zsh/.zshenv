@@ -8,7 +8,19 @@ export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
 export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
-export PATH="/usr/local/sbin:/Users/wiwen/Library/Python/3.7/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$EBOOK_PATH:$HOME/go/bin:/usr/local/sbin:/Users/wiwen/Library/Python/3.7/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
-source $HOME/.bash_profile
+# source $HOME/.bash_profile
+
+export EBOOK_PATH=/Applications/calibre.app/Contents/MacOS
+export ANSIBLE_CONFIG=$HOME/.ansible/ansible.cfg
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
+# export GOROOT="$HOME/sdk/go"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+#export GOPROXY="http://192.168.0.103:9000,https://goproxy.cn,direct"
+export GOPROXY="https://goproxy.cn,direct"
+#export GO111MODULE=on
+#export GO111MODULE=off
