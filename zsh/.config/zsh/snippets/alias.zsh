@@ -3,7 +3,7 @@ alias -g H='| head ' T='| tail ' L='| less ' R='| rgc '
 alias -g N='>/dev/null '
 
 # 文件系统相关
-alias rm='rm -i'   rd='rmdir'   md='mkdir -p'
+alias rm='rmtrash'   rd='rmdir'   md='mkdir -p'
 alias ls='exa -h'  la='ls -la'  lt='ls --tree'  ll='ls -l'  l='ls'
 alias df='df -h'   dus='du -sh' del='gio trash'
 
@@ -70,6 +70,9 @@ alias docker-clean=' \
   docker image prune -f ; \
   docker network prune -f ; \
   docker volume prune -f '
+
+alias vi='mvim -v'
+alias vim='mvim -v'
 
 source <(kubectl completion zsh)
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases

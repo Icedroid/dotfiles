@@ -8,7 +8,7 @@ export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
 export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$EBOOK_PATH:$HOME/go/bin:/usr/local/sbin:/Users/wiwen/Library/Python/3.7/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$EBOOK_PATH:$HOME/go/bin:/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/Users/wiwen/Library/Python/3.7/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # source $HOME/.bash_profile
@@ -16,6 +16,7 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export EBOOK_PATH=/Applications/calibre.app/Contents/MacOS
 export ANSIBLE_CONFIG=$HOME/.ansible/ansible.cfg
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+export EDITOR=vim
 
 # export GOROOT="$HOME/sdk/go"
 export GOPATH="$HOME/go"

@@ -1,0 +1,246 @@
+{
+  // general editor settings
+  "terminal.external.osxExec": "iTerm.app",
+  "workbench.colorTheme": "Material Theme",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.sideBar.location": "left",
+  "vsicons.projectDetection.autoReload": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.lineNumbers": "on",
+  "editor.fontSize": 12,
+  "editor.rulers": [90, 120],
+  "editor.minimap.enabled": true,
+  "window.zoomLevel": 0,
+  "window.nativeTabs": true,
+  "editor.renderWhitespace": "boundary",
+  // languages
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[c]": {
+    "editor.tabSize": 4
+  },
+  "[cpp]": {
+    "editor.tabSize": 4
+  },
+  "[dockerfile]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[vue]": {
+    "editor.tabSize": 2
+  },
+  "[latex]": {
+    "editor.tabSize": 4
+  },
+  "[shellscript]": {},
+  "[makefile]": {},
+  "[markdown]": {
+    "editor.tabSize": 4
+  },
+  // linting style, provider: pylint, pep8, flake8, mypy, pylama
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.maxNumberOfProblems": 50,
+  "python.linting.pylintArgs": ["--errors-only"],
+  "python.linting.pep8Enabled": false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.mypyEnabled": false,
+  "python.linting.pylamaEnabled": false,
+  // virtual env
+  "python.venvPath": "venv/bin/python",
+  // auto-formatting, provider: autopep8 or yapf, install use pip
+  "python.formatting.formatOnSave": true,
+  // auto-complete
+  "python.autoComplete.extraPaths": [],
+  // jupyter settings
+  "python.jupyter.defaultKernel": "Python 3",
+  "python.jupyter.startupCode": ["%matplotlib inline"],
+  "python.jupyter.appendResults": true,
+  "jupyter.appendResults": true,
+  "jupyter.notebook.startupArgs": [
+    "--no-browser",
+    "--port=8888",
+    "--NotebookApp.allow_origin=\"*\""
+  ],
+  // pandoc
+  "pandoc.pdfOptString": "--latex-engine=xelatex --listings",
+  // "files.autoSave": "afterDelay",
+  // // "workbench.colorTheme": "One Dark Pro Vivid",
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#282c34",
+    "activityBar.background": "#282c34",
+    "sideBar.background": "#282c34"
+  },
+  // "explorer.confirmDelete": false,
+  "files.associations": {
+    "*.sh": "shellscript"
+  },
+  "editor.fontFamily": "Fira Code, Source Code Pro for Powerline, Menlo, Monaco, 'Courier New', monospace",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 24,
+  "editor.tabCompletion": "on",
+  "go.useLanguageServer": true,
+  "[go]": {
+    // "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    // Add parameter placeholders when completing a function.
+    "usePlaceholders": true,
+    // If true, enable additional analyses with staticcheck.
+    // Warning: This will significantly increase memory usage.
+    "staticcheck": false
+  },
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true,
+    "rename": true,
+    "goToDefinition": true,
+    "hover": true,
+    "signatureHelp": true,
+    "goToTypeDefinition": true,
+    "goToImplementation": true,
+    "documentSymbols": true,
+    "workspaceSymbols": true,
+    "findReferences": true,
+    "diagnostics": true,
+    "documentLink": true,
+    "highlight": true
+  },
+  // "go.languageServerFlags": [
+  //     "-rpc.trace", // for more detailed debug logging
+  //     "serve",
+  //     "-format-style=goimports",
+  //     "--debug=localhost:6060", // to investigate memory usage, see profiles
+  // ],
+  "files.eol": "\n", // formatting only supports LF line endings
+  // "go.goroot": "/usr/local/go",
+  // "go.gopath": "~/go",
+  "go.formatTool": "goimports",
+  "go.testFlags": ["-v", "-count=1"],
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast", "--disable=varcheck"],
+  // "gopls": {
+  //     "usePlaceholders": true, // add parameter placeholders when completing a function
+  //     "enhancedHover": true, // experimental to improve quality of hover (will be on by default soon)
+  // },
+  "docker.images.groupBy": "Registry",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // "workbench.colorTheme": "One Dark Pro",
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.advanced.messages": {
+    "suppressSupportGitLensNotification": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sqltools.connections": [
+    {
+      "database": "ecf_develop",
+      "dialect": "MySQL",
+      "name": "ecf@125.88.39.157",
+      "password": "eGszY8Jb38C3mcDipbB",
+      "port": 4306,
+      "server": "125.88.39.157",
+      "username": "ecf"
+    }
+  ],
+  "go.buildFlags": ["-v"],
+  "go.addTags": {
+    "tags": "json",
+    "options": "json=omitempty",
+    "promptForTags": false,
+    // "transform": "snakecase"
+    "transform": "camelcase"
+  },
+  "go.editorContextMenuCommands": {
+    "toggleTestFile": true,
+    "addTags": true,
+    "removeTags": true,
+    "testAtCursor": true,
+    "testFile": true,
+    "testPackage": true,
+    "generateTestForFunction": true,
+    "generateTestForFile": false,
+    "generateTestForPackage": false,
+    "addImport": true,
+    "testCoverage": true,
+    "playground": true,
+    "debugTestAtCursor": true
+  },
+  "go.autocompleteUnimportedPackages": true,
+  // "plantuml.server": "http://127.0.0.1:8989",
+  // "plantuml.render": "PlantUMLServer",
+  // eslint
+  "eslint.validate": ["javascript", "javascriptreact", "html"],
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.commandsToSkipShell": [
+    "editor.action.toggleTabFocusMode",
+    "workbench.action.debug.continue",
+    "workbench.action.debug.pause",
+    "workbench.action.debug.restart",
+    "workbench.action.debug.run",
+    "workbench.action.debug.start",
+    "workbench.action.debug.stop",
+    "workbench.action.focusActiveEditorGroup",
+    "workbench.action.focusFirstEditorGroup",
+    "workbench.action.focusSecondEditorGroup",
+    "workbench.action.focusThirdEditorGroup",
+    "workbench.action.openNextRecentlyUsedEditorInGroup",
+    "workbench.action.openPreviousRecentlyUsedEditorInGroup",
+    "workbench.action.quickOpen",
+    "workbench.action.showCommands",
+    "workbench.action.terminal.clear",
+    "workbench.action.terminal.copySelection",
+    "workbench.action.terminal.focus",
+    "workbench.action.terminal.focusAtIndex1",
+    "workbench.action.terminal.focusAtIndex2",
+    "workbench.action.terminal.focusAtIndex3",
+    "workbench.action.terminal.focusAtIndex4",
+    "workbench.action.terminal.focusAtIndex5",
+    "workbench.action.terminal.focusAtIndex6",
+    "workbench.action.terminal.focusAtIndex7",
+    "workbench.action.terminal.focusAtIndex8",
+    "workbench.action.terminal.focusAtIndex9",
+    "workbench.action.terminal.focusNext",
+    "workbench.action.terminal.focusPrevious",
+    "workbench.action.terminal.kill",
+    "workbench.action.terminal.new",
+    "workbench.action.terminal.paste",
+    "workbench.action.terminal.runActiveFile",
+    "workbench.action.terminal.runSelectedText",
+    "workbench.action.terminal.scrollDown",
+    "workbench.action.terminal.scrollDownPage",
+    "workbench.action.terminal.scrollToBottom",
+    "workbench.action.terminal.scrollToTop",
+    "workbench.action.terminal.scrollUp",
+    "workbench.action.terminal.scrollUpPage",
+    "workbench.action.terminal.toggleTerminal"
+  ],
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path.mac": "/Users/wiwen/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.draft-path.mac": "/Users/wiwen/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  }
+}
