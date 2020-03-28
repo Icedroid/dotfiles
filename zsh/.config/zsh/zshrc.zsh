@@ -67,10 +67,6 @@ zinit light-mode for \
     atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh' \
     trapd00r/LS_COLORS
 
-zinit light Aloxaf/fzf-tab
-
-zinit light jonmosco/kube-ps1
-
 zinit ice svn
 zinit snippet OMZ::plugins/extract
 
@@ -90,7 +86,9 @@ zinit svn for \
 zinit as="completion" for \
     OMZ::plugins/cargo/_cargo \
     OMZ::plugins/rust/_rust \
-    OMZ::plugins/fd/_fd
+    OMZ::plugins/fd/_fd \
+    OMZ::plugins/docker/_docker \
+    OMZ::plugins/golang/golang.plugin.zsh
 
 # ==== 加载自定义插件 ====
 
@@ -101,19 +99,21 @@ done
 # source ~/Coding/shell/fzf-tab/fzf-tab.zsh
 # source ~/Coding/shell/zvm/zvm.zsh
 
-# zinit ice as="completion"
+zinit ice as="completion"
 # zinit snippet $XDG_CONFIG_HOME/zsh/snippets/_bat
+zinit snippet $XDG_CONFIG_HOME/zsh/snippets/_kubectl
 
 # zinit snippet ~/.travis/travis.sh
 
-# ==== 初始化补全 ====
+zpcompinit
+zpcdreplay
 
+# ==== 初始化补全 ====
 zinit light-mode for \
     zdharma/fast-syntax-highlighting \
     zsh-users/zsh-autosuggestions
 
-zpcompinit
-zpcdreplay
+zinit light Aloxaf/fzf-tab
 
 # ==== 加载主题 ====
 
@@ -131,6 +131,5 @@ p10k)
     source $XDG_CONFIG_HOME/zsh/p10k.zsh
     zinit ice depth=1
     zinit light romkatv/powerlevel10k
-    PROMPT='$(kube_ps1)'$PROMPT
     ;;
 esac
